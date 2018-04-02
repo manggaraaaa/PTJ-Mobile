@@ -16,12 +16,8 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.message)
-    TextView mTextMessage;
     @BindView(R.id.navigation)
     BottomNavigationViewEx navigation;
-    @BindView(R.id.main_toolbar)
-    Toolbar mToolbar;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -30,16 +26,12 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_order:
-                    mTextMessage.setText(R.string.title_order);
                     return true;
                 case R.id.navigation_article:
-                    mTextMessage.setText(R.string.title_article);
                     return true;
                 case R.id.navigation_more:
-                    mTextMessage.setText(R.string.title_more);
                     return true;
             }
             return false;
@@ -53,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-
-        setSupportActionBar(mToolbar);
 
         navigation.enableAnimation(false);
         navigation.enableShiftingMode(false);
