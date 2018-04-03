@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -18,7 +17,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import butterknife.BindAnim;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -47,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_article:
                     return true;
-                case R.id.navigation_more:
+                case R.id.navigation_akun:
                     return true;
             }
             return false;
