@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
@@ -63,18 +64,18 @@ public class HomeFragment extends Fragment {
 //        url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
 //        url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
 
-        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
-        file_maps.put("Proses memberi media Polibag pada tanaman",R.drawable.ptj_4);
-        file_maps.put("Bahan untuk media tanaman",R.drawable.ptj_3);
-        file_maps.put("Bibit Durian",R.drawable.ptj_2);
+        HashMap<String, Integer> file_maps = new HashMap<String, Integer>();
+        file_maps.put("Proses memberi media Polibag pada tanaman", R.drawable.ptj_4);
+        file_maps.put("Bahan untuk media tanaman", R.drawable.ptj_3);
+        file_maps.put("Bibit Durian", R.drawable.ptj_2);
         file_maps.put("Proses Stek tanaman", R.drawable.ptj_1);
 
-        initSlider(file_maps);
+        initSlider(v, file_maps);
 
         return v;
     }
 
-    private void initSlider(HashMap<String, Integer> url_maps) {
+    private void initSlider(View view, HashMap<String, Integer> url_maps) {
         for (String name : url_maps.keySet()) {
             TextSliderView textSliderView = new TextSliderView(getContext());
             // initialize a SliderLayout
@@ -99,6 +100,7 @@ public class HomeFragment extends Fragment {
 
         mSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
         mSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Top);
+        mSlider.setCustomIndicator((PagerIndicator) view.findViewById(R.id.custom_indicator));
         mSlider.setCustomAnimation(new DescriptionAnimation());
         mSlider.setDuration(4000);
     }

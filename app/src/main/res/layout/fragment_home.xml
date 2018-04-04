@@ -293,7 +293,7 @@
 
                 </LinearLayout>
 
-                <RelativeLayout
+                <LinearLayout
                     android:id="@+id/container_bottom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -302,18 +302,40 @@
                     android:background="@color/md_white"
                     android:orientation="vertical">
 
-                    <com.daimajia.slider.library.SliderLayout
-                        android:id="@+id/slider"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="200dp" />
+                        android:layout_height="wrap_content">
 
-                    <com.daimajia.slider.library.Indicators.PagerIndicator
-                        android:id="@+id/custom_indicator"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center" />
+                        <com.daimajia.slider.library.SliderLayout
+                            android:id="@+id/slider"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp" />
 
-                </RelativeLayout>
+                        <com.daimajia.slider.library.Indicators.PagerIndicator
+                            android:id="@+id/custom_indicator"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:gravity="center"
+                            android:alpha="0.4"
+                            app:selected_color="@color/md_orange900"
+                            app:selected_height="6dp"
+                            app:selected_padding_left="2dp"
+                            app:selected_padding_right="2dp"
+                            app:selected_width="6dp"
+                            app:shape="rect"
+                            app:unselected_color="@color/md_grey900"
+                            app:unselected_height="6dp"
+                            app:unselected_padding_left="2dp"
+                            app:unselected_padding_right="2dp"
+                            app:unselected_width="6dp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
 
             </RelativeLayout>
 
