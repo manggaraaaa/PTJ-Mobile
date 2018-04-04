@@ -11,3 +11,4 @@ This repo for playground PTJ Android Project. Operated by [@muhammadaa](https://
 * Material Design
 * [BottomNavigationViewEx](https://github.com/ittianyu/BottomNavigationViewEx)
 * [ButterKnife](http://jakewharton.github.io/butterknife/)
+* [AwesomeSplash](https://github.com/ViksaaSkool/AwesomeSplash)
