@@ -17,8 +17,8 @@
         android:title="@string/title_article" />
 
     <item
-        android:id="@+id/navigation_more"
-        android:icon="@mipmap/ic_more_horizontal_black"
-        android:title="@string/title_more" />
+        android:id="@+id/navigation_akun"
+        android:icon="@mipmap/ic_person_farmer_black"
+        android:title="@string/title_person" />
 
 </menu>

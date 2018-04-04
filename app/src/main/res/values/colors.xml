@@ -12,6 +12,8 @@
     <color name="primary_dark">#ff212121</color>
     <color name="accent">#ff0d47a1</color>
 
+    <color name="Wheat">#F5DEB3</color>
+
     <!-- MATERIAL DESIGN COLORS -->
     <color name="md_red50">#ffffebee</color>
     <color name="md_red100">#ffffcdd2</color>
