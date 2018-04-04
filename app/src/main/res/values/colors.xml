@@ -7,8 +7,9 @@
     <color name="colorAccent">#FF4081</color>
 
     <!-- custom color -->
-    <color name="primary">#ffff5722</color>
+    <!--<color name="primary">#ffff5722</color>-->
     <!--<color name="primary_dark">#ffe64a19</color>-->
+    <color name="primary">#ffff9800</color>
     <color name="primary_dark">#ff212121</color>
     <color name="accent">#ff0d47a1</color>
 
