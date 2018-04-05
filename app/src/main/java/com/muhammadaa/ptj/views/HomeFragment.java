@@ -1,14 +1,19 @@
 package com.muhammadaa.ptj.views;
 
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +23,15 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.muhammadaa.ptj.R;
+import com.muhammadaa.ptj.components.PenawaranItemAdapter;
+import com.muhammadaa.ptj.models.ItemsModel;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,10 +44,15 @@ public class HomeFragment extends Fragment {
     TextView mTime;
     @BindView(R.id.slider)
     SliderLayout mSlider;
+    @BindView(R.id.rv_penawaran)
+    RecyclerView vPenawaran;
 
     private BroadcastReceiver _broadcastReceiver;
     private final SimpleDateFormat _sdfWatchTime = new SimpleDateFormat("HH:mm");
     private final SimpleDateFormat _sdfWatchDate = new SimpleDateFormat("dd MMMM yyyy");
+
+    private List<ItemsModel> dataEvent = new ArrayList<>();
+    private static final Integer[] images = {R.drawable.ptj_1, R.drawable.ptj_2, R.drawable.ptj_3, R.drawable.ptj_4};
 
     public HomeFragment() {
         // Required empty public constructor
@@ -71,8 +85,45 @@ public class HomeFragment extends Fragment {
         file_maps.put("Proses Stek tanaman", R.drawable.ptj_1);
 
         initSlider(v, file_maps);
+        
+        initItemPenawaran();
 
         return v;
+    }
+
+    private void initItemPenawaran() {
+        String img1 = String.valueOf(images[0]);
+        String img2 = String.valueOf(images[1]);
+        String img3 = String.valueOf(images[2]);
+        String img4 = String.valueOf(images[3]);
+
+        dataEvent.add(new ItemsModel("1", "Seminar Nasional Rekam Medis", img1, "04 Maret 2018", "Tema: Peran Perekam Medis dan Informasi Kesehatan dalam Menunjang Keberhasilan Standar Nasional Akreditasi Rumah Sakit (SNARS) Edisi 1"));
+        dataEvent.add(new ItemsModel("2", "Pelatihan Perawat ICU Gelombang IV", img2, "05 Februari - 23 Maret 2018", "Teori:\n1. Basic Cardiac Life Support (BCLS)\n" +
+                "\n2. Monitoring Hemodinamika (Update)\n" +
+                "\n3. Terapi Cairan Pada Pasien Kritis (Update)\n" +
+                "\n4. Pengelolaan Pasien Dengan Gangguan Elektrolit Dan Asam Basa Metoda Stewart\n" +
+                "\n5. Pengelolaan Dan Perawatan Pasien Nyeri di ICU\n" +
+                "\n6. Recent Critical Care Nursing"));
+        dataEvent.add(new ItemsModel("3", "Bincang Sehat Kolesterol", img3, "16 Desember 2017", "Kolesterol Darah dan Permasalahannya"));
+        dataEvent.add(new ItemsModel("4", "Seminar Awam Brainspotting", img4, "18 November 2017", "Aktivitas Otak dan Perilaku Mekanisme dan Intervensi"));
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false);
+        PenawaranItemAdapter adapter = new PenawaranItemAdapter(getContext(), dataEvent, new PenawaranItemAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(ItemsModel item) {
+                Toast.makeText(getContext(), item.getTitleEvent(), Toast.LENGTH_SHORT).show();
+                /*Dialog settingsDialog = new Dialog(getContext());
+                settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                View v = getLayoutInflater().inflate(R.layout.image_layout, null);
+                ImageView img = (ImageView) v.findViewById(R.id.img_full);
+                img.setImageResource(Integer.parseInt(item.getImgEvent()));
+                settingsDialog.setContentView(v);
+                settingsDialog.show();*/
+            }
+        });
+        vPenawaran.setLayoutManager(gridLayoutManager);
+        vPenawaran.setHasFixedSize(true);
+        vPenawaran.setAdapter(adapter);
     }
 
     private void initSlider(View view, HashMap<String, Integer> url_maps) {
