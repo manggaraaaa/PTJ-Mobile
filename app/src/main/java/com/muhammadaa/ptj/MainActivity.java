@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.muhammadaa.ptj.views.HomeFragment;
+import com.muhammadaa.ptj.views.OrderFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
                     ft.commit();
                     return true;
                 case R.id.navigation_order:
+                    currentFragment = new OrderFragment();
+                    ft = getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.container_main, currentFragment);
+                    ft.commit();
                     return true;
                 case R.id.navigation_article:
                     return true;
