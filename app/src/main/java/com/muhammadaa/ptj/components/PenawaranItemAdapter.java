@@ -56,23 +56,21 @@ public class PenawaranItemAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     class MyHolder extends RecyclerView.ViewHolder {
 
-        ImageView imgCertificate;
-        TextView txtTitle, txtDate;
+        TextView txtTitle, txtDesc;
 
         public MyHolder(View itemView) {
             super(itemView);
 
-            imgCertificate = (ImageView) itemView.findViewById(R.id.img_event);
-            txtTitle = (TextView) itemView.findViewById(R.id.title_event);
-            txtDate = (TextView) itemView.findViewById(R.id.subtitle_event);
+            txtTitle = (TextView) itemView.findViewById(R.id.title_item);
+            txtDesc = (TextView) itemView.findViewById(R.id.desc_item);
         }
 
         public void bind(final ItemsModel item, final OnItemClickListener listener) {
-//            imgCertificate.setImageResource(Integer.parseInt(item.getImgEvent()));
-            txtTitle.setText(item.getTitleEvent());
-            txtDate.setText(item.getTglEvent());
+            txtTitle.setText(item.getTitleItem());
+            txtDesc.setText(item.getDescItem());
             itemView.setOnClickListener(new View.OnClickListener() {
-                @Override public void onClick(View v) {
+                @Override
+                public void onClick(View v) {
                     listener.onItemClick(item);
                 }
             });

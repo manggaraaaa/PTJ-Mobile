@@ -6,37 +6,37 @@ package com.muhammadaa.ptj.models;
 
 public class ItemsModel {
 
-    private String IDevent;
-    private String titleEvent;
-    private String imgEvent;
-    private String tglEvent;
-    private String descEvent;
+    private int IDItem;
+    private String titleItem;
+    private String descItem;
+    private String hargaItem;
+    private String imageItem;
 
-    public ItemsModel(String IDevent, String titleEvent, String imgEvent, String tglEvent, String descEvent) {
-        this.IDevent = IDevent;
-        this.titleEvent = titleEvent;
-        this.imgEvent = imgEvent;
-        this.tglEvent = tglEvent;
-        this.descEvent = descEvent;
+    public ItemsModel(int IDItem, String titleItem, String descItem, String hargaItem, String imageItem) {
+        this.IDItem = IDItem;
+        this.titleItem = titleItem;
+        this.descItem = descItem;
+        this.hargaItem = hargaItem;
+        this.imageItem = imageItem;
     }
 
-    public String getIDevent() {
-        return IDevent;
+    public int getIDItem() {
+        return IDItem;
     }
 
-    public String getTitleEvent() {
-        return titleEvent;
+    public String getTitleItem() {
+        return titleItem;
     }
 
-    public String getImgEvent() {
-        return imgEvent;
+    public String getDescItem() {
+        return descItem;
     }
 
-    public String getTglEvent() {
-        return tglEvent;
+    public String getHargaItem() {
+        return hargaItem;
     }
 
-    public String getDescEvent() {
-        return descEvent;
+    public String getImageItem() {
+        return imageItem;
     }
 }

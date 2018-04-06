@@ -52,7 +52,6 @@ public class HomeFragment extends Fragment {
     private final SimpleDateFormat _sdfWatchDate = new SimpleDateFormat("dd MMMM yyyy");
 
     private List<ItemsModel> dataEvent = new ArrayList<>();
-    private static final Integer[] images = {R.drawable.ptj_1, R.drawable.ptj_2, R.drawable.ptj_3, R.drawable.ptj_4};
 
     public HomeFragment() {
         // Required empty public constructor
@@ -85,33 +84,30 @@ public class HomeFragment extends Fragment {
         file_maps.put("Proses Stek tanaman", R.drawable.ptj_1);
 
         initSlider(v, file_maps);
-        
+
         initItemPenawaran();
 
         return v;
     }
 
     private void initItemPenawaran() {
-        String img1 = String.valueOf(images[0]);
-        String img2 = String.valueOf(images[1]);
-        String img3 = String.valueOf(images[2]);
-        String img4 = String.valueOf(images[3]);
-
-        dataEvent.add(new ItemsModel("1", "Seminar Nasional Rekam Medis", img1, "04 Maret 2018", "Tema: Peran Perekam Medis dan Informasi Kesehatan dalam Menunjang Keberhasilan Standar Nasional Akreditasi Rumah Sakit (SNARS) Edisi 1"));
-        dataEvent.add(new ItemsModel("2", "Pelatihan Perawat ICU Gelombang IV", img2, "05 Februari - 23 Maret 2018", "Teori:\n1. Basic Cardiac Life Support (BCLS)\n" +
-                "\n2. Monitoring Hemodinamika (Update)\n" +
-                "\n3. Terapi Cairan Pada Pasien Kritis (Update)\n" +
-                "\n4. Pengelolaan Pasien Dengan Gangguan Elektrolit Dan Asam Basa Metoda Stewart\n" +
-                "\n5. Pengelolaan Dan Perawatan Pasien Nyeri di ICU\n" +
-                "\n6. Recent Critical Care Nursing"));
-        dataEvent.add(new ItemsModel("3", "Bincang Sehat Kolesterol", img3, "16 Desember 2017", "Kolesterol Darah dan Permasalahannya"));
-        dataEvent.add(new ItemsModel("4", "Seminar Awam Brainspotting", img4, "18 November 2017", "Aktivitas Otak dan Perilaku Mekanisme dan Intervensi"));
+        dataEvent.add(new ItemsModel(1, "Title 1", "Desc 1", "Harga 1", "Image 1"));
+        dataEvent.add(new ItemsModel(2, "Title 2", "Desc 2", "Harga 2", "Image 2"));
+        dataEvent.add(new ItemsModel(3, "Title 3", "Desc 3", "Harga 3", "Image 3"));
+        dataEvent.add(new ItemsModel(4, "Title 4", "Desc 4", "Harga 4", "Image 4"));
+        dataEvent.add(new ItemsModel(5, "Title 5", "Desc 5", "Harga 5", "Image 5"));
+        dataEvent.add(new ItemsModel(6, "Title 6", "Desc 6", "Harga 6", "Image 6"));
+        dataEvent.add(new ItemsModel(7, "Title 7", "Desc 7", "Harga 7", "Image 7"));
+        dataEvent.add(new ItemsModel(8, "Title 8", "Desc 8", "Harga 8", "Image 8"));
+        dataEvent.add(new ItemsModel(9, "Title 9", "Desc 9", "Harga 9", "Image 9"));
+        dataEvent.add(new ItemsModel(10, "Title 10", "Desc 10", "Harga 10", "Image 10"));
+        dataEvent.add(new ItemsModel(11, "Title 11", "Desc 11", "Harga 11", "Image 11"));
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 1, GridLayoutManager.HORIZONTAL, false);
         PenawaranItemAdapter adapter = new PenawaranItemAdapter(getContext(), dataEvent, new PenawaranItemAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(ItemsModel item) {
-                Toast.makeText(getContext(), item.getTitleEvent(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), item.getTitleItem(), Toast.LENGTH_SHORT).show();
                 /*Dialog settingsDialog = new Dialog(getContext());
                 settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
                 View v = getLayoutInflater().inflate(R.layout.image_layout, null);
