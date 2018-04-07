@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="196dp"
+        android:background="@drawable/corner_grey_clear">
+
+        <ImageView
+            android:id="@+id/img_article"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="matrix"
+            tools:src="@drawable/ic_image_lands" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/title_article"
+        style="@style/Base.TextAppearance.Widget.AppCompat.Toolbar.Subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:textColor="@color/primary_dark"
+        android:textSize="14sp"
+        tools:text="Lorem ipsum dolor sit amet " />
+
+    <TextView
+        android:id="@+id/desc_article"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="5"
+        android:textSize="12sp"
+        tools:text="Lorem ipsum dolor sit amet, et illum dolores duo. Mea postea maiorum ne. Te sea regione singulis corrumpit. Prima mundi deserunt at pri, facilis alienum at mel, ut sed debet appetere. Illum quidam ne nec, ius ullum decore soluta id. Omnium periculis usu ea, pri detracto molestie ea.
+
+Ut primis appareat per, sit cu legimus consequuntur. Mel eu mundi quando. Mel nonumy periculis accusamus ad, eu sed virtute voluptua recteque, eum minimum voluptaria an. At ius dolore reprimique, dicunt iriure signiferumque his et, vim et cetero utroque. Ex est alii altera, sed an primis vivendo. Ea usu suas choro, wisi erroribus id cum, justo ponderum sea ne.
+
+Ei his error molestie. Fierent tacimates cum no. Movet elitr percipit ad quo, ea omittam copiosae vim. Eros simul intellegam ius ei, pro tota vituperata et.
+
+Ut suscipit vulputate cum, odio exerci everti vis ne, vel partem denique principes ad. Id aeque audiam facilisis cum, error graeci eirmod an his. Ea habemus vivendum iudicabit eum, ea placerat legendos liberavisse usu. Sit justo cotidieque ad, id sint eius blandit sed, sit no justo invidunt quaerendum. Ut sale mutat deserunt duo, iudico graecis habemus ei nec. Mei eu illum nusquam philosophia, cum ex menandri rationibus vituperata.
+
+No vim illud concludaturque. At atqui audiam has, ut elitr dolorem contentiones vix. Quo dicant efficiendi delicatissimi in, dicta blandit vis at, ea eius lorem copiosae ius. Nec minim intellegebat cu, nam errem audire ne. Mei no tation vidisse, erant omnes vituperata an pri, ut delectus quaerendum duo. Labore legendos te qui, quem exerci apeirian et vim." />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/windowBackground" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dipublish"
+                android:textStyle="bold"
+                android:textColor="@color/md_black"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:text="22 Juni 1993"
+                android:textColor="@color/md_black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_share_clear_black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/ic_bookmark_clear_black" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
