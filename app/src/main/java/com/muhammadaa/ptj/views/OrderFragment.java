@@ -6,14 +6,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.muhammadaa.ptj.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class OrderFragment extends Fragment {
 
+    @BindView(R.id.title_custom)
+    TextView vTitle;
 
     public OrderFragment() {
         // Required empty public constructor
@@ -24,7 +30,14 @@ public class OrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false);
+        View v = inflater.inflate(R.layout.fragment_order, container, false);
+
+        ButterKnife.bind(this, v);
+
+        vTitle.setText("Pesananan");
+
+
+        return v;
     }
 
 }
